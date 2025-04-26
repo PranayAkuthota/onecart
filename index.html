@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nike Jacket Comparison</title>
+
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .brand-images {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        .brand-images img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+        .brand-images h2 {
+            margin-right: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        .login-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .container#signup, .container#signin {
+            max-width: 400px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        .form-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #444;
+        }
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .input-group i {
+            position: absolute;
+            top: 12px;
+            left: 10px;
+            color: #888;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px 10px 10px 35px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .input-group label {
+            display: block;
+            margin-top: 5px;
+            font-size: 13px;
+            color: grey;
+        }
+        .btn {
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .link-to {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        .link-to a {
+            color: #8d8ef5;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .link-to a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            text-align: center;
+            margin: 50px 0 20px;
+            color: #222;
+        }
+        .container.products {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        .product-card img {
+            height: 200px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+        .product-details {
+            margin-bottom: 15px;
+            font-size: 15px;
+            color: #555;
+            text-align: left;
+        }
+        .buy-now {
+            display: inline-block;
+            background-color: #ff5722;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        .watch-products{
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+        
+        .card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        .card img {
+            height: 200px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+        .product-detls {
+            margin-bottom: 15px;
+            font-size: 15px;
+            color: #555;
+            text-align: left;
+        }
+        .b-now {
+            display: inline-block;
+            background-color: #ff5722;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        h1 {
+            text-align: center;
+            margin: 50px 0 20px;
+            color: #222;
+        }
+        .phone-products{
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+        
+        .Icard {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        .Icard img {
+            height: 200px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+        .phone-products {
+            margin-bottom: 15px;
+            font-size: 15px;
+            color: #555;
+            text-align: left;
+        }
+        .bu-now {
+            display: inline-block;
+            background-color: #ff5722;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        
+        /* CSS */
+.one-cart {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.one-cart img {
+    display: block;
+    margin: 0 auto;
+    width: 500px;
+}
+
+        .buy-now:hover {
+            background-color: #e64a19;
+        }
+    </style>
+</head>
+
+<body>
+ <!-- HTML -->
+<div class="one-cart">
+    <h1>Onecart-Shopping Apps merger</h1>
+    <img src="images/onecart.png" width="500px" />
+  </div>
+  
+    
+</div>
+    <!-- Brand Images -->
+    <div class="brand-images">
+        <h2>Shop from:</h2>
+        <img src="images/amaz.png" alt="Amazon" onerror="this.onerror=null; this.src='images/default.png';">
+        <img src="images/flipkart.jpg" alt="Flipkart" onerror="this.onerror=null; this.src='images/default.png';">
+        <img src="images/myntra.jpg" alt="Myntra" onerror="this.onerror=null; this.src='images/default.png';">
+        <img src="images/ajio.jpg" alt="Ajio" onerror="this.onerror=null; this.src='images/default.png';">
+    </div>
+
+    <!-- Login Button -->
+    <button class="login-icon" onclick="document.getElementById('signin').scrollIntoView();">Sign In</button>
+
+    <!-- Sign In Form -->
+    <div class="container" id="signin">
+        <h1 class="form-title">Sign In</h1>
+        <form method="post" action="signin.php">
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <input type="submit" class="btn" value="Sign In" name="signIn">
+            <div class="link-to">
+                Don't have an account? <a href="#signup">Sign Up</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- Signup Form -->
+    <div class="container" id="signup">
+        <h1 class="form-title">Register</h1>
+        <form method="post" action="register.php">
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" name="fName" id="fName" placeholder="First Name" required>
+                <label for="fName">First Name</label>
+            </div>
+
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" name="lName" id="lName" placeholder="Last Name" required>
+                <label for="lName">Last Name</label>
+            </div>
+
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+                <label for="email">Email</label>
+            </div>
+
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+                <label for="password">Password</label>
+            </div>
+
+            <input type="submit" class="btn" value="Sign Up" name="signUp">
+            <div class="link-to">
+                Already have an account? <a href="#signin">Sign In</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- Heading -->
+    <h1>Nike Jacket Comparison: Amazon vs Flipkart vs Myntra vs Ajio</h1>
+
+    <!-- Product Cards -->
+    <div class="container products">
+        <div class="product-card">
+            <h2>Amazon</h2>
+            <img src="images/nikej.jpg" alt="Nike Jacket Amazon" onerror="this.onerror=null; this.src='images/default.png';">
+            <div class="product-details">
+                <span>Price: ₹15,999</span><br>
+                <span>Color: Black</span><br>
+                <span>Size: M</span><br>
+                <span>Rating: ⭐⭐⭐⭐☆ (4.4/5)</span>
+            </div>
+            <a href="https://www.amazon.in/" target="_blank" class="buy-now">Buy on Amazon</a>
+        </div>
+
+        <div class="product-card">
+            <h2>Flipkart</h2>
+            <img src="images/nikeja.webp" alt="Nike Jacket Flipkart" onerror="this.onerror=null; this.src='images/default.png';">
+            <div class="product-details">
+                <span>Price: ₹6,299</span><br>
+                <span>Color: Grey</span><br>
+                <span>Size: L</span><br>
+                <span>Rating: ⭐⭐⭐⭐☆ (4.2/5)</span>
+            </div>
+            <a href="https://www.flipkart.com/" target="_blank" class="buy-now">Buy on Flipkart</a>
+        </div>
+
+        <div class="product-card">
+            <h2>Myntra</h2>
+            <img src="images/nikea.webp" alt="Nike Jacket Myntra" onerror="this.onerror=null; this.src='images/default.png';">
+            <div class="product-details">
+                <span>Price: ₹5,125</span><br>
+                <span>Color: Blue</span><br>
+                <span>Size: S</span><br>
+                <span>Rating: ⭐⭐⭐⭐☆ (4.6/5)</span>
+            </div>
+            <a href="https://www.myntra.com/" target="_blank" class="buy-now">Buy on Myntra</a>
+        </div>
+
+        <div class="product-card">
+            <h2>Ajio</h2>
+            <img src="images/nike.webp" alt="Nike Jacket Ajio" onerror="this.onerror=null; this.src='images/default.png';">
+            <div class="product-details">
+                <span>Price: ₹3,252</span><br>
+                <span>Color: Red</span><br>
+                <span>Size: XL</span><br>
+                <span>Rating: ⭐⭐⭐⭐☆ (4.1/5)</span>
+            </div>
+            <a href="https://www.ajio.com/" target="_blank" class="buy-now">Buy on Ajio</a>
+        </div>
+    </div>
+
+    <h1>Apple Watch Series 9 Comparison: Amazon vs Flipkart vs Ajio</h1>
+    <div class="watch-products">
+        <div class="card">
+            <h2>Amazon</h2>
+            <img src="images/watch.webp" alt="Amazon Watch" onerror="this.onerror=null; this.src='images/default.png';">
+            <div class="product-detls">
+                <span>Price: ₹41,900</span><br>
+                <span>Storage:32GB</span><br>
+                <span>Color:Midnight</span><br>
+                <span>Rating: ⭐⭐⭐⭐☆ (4.9/5)</span>
+            </div>
+            <a href="https://www.amazon.com/" target="_blank" class="b-now">Buy on Amazon</a>
+        </div>
+            <div class="card">
+                <h2>Flipkart</h2>
+                <img src="images/wath.webp" alt="FlipkartWatch" onerror="this.onerror=null; this.src='images/default.png';">
+                <div class="product-detls">
+                    <span>Price: ₹29,999</span><br>
+                    <span>Storage:32GB</span><br>
+                    <span>Color:Starlight</span><br>
+                    <span>Rating: ⭐⭐⭐⭐☆ (4.6/5)</span>
+                </div>
+                <a href="https://www.flipkart.com/" target="_blank" class="b-now">Buy on Flipkart</a>
+            </div>
+                <div class="card">
+                    <h2>Ajio</h2>
+                    <img src="images/wach.webp" alt="Amazon Watch" onerror="this.onerror=null; this.src='images/default.png';">
+                    <div class="product-detls">
+                        <span>Price: ₹43,299</span><br>
+                        <span>Storage:32GB</span><br>
+                        <span>Color:Red</span><br>
+                        <span>Rating: ⭐⭐⭐⭐☆ (4.5/5)</span>
+                    </div>
+                    <a href="https://www.Ajio.com/" target="_blank" class="b-now">Buy on Ajio</a>
+                </div>
+     <div class="section">
+        <h1>Iphone 14 Pro Comparison: Amazon vs Flipkart</h1>
+    <div class="phone-products">
+        
+        <div class="Icard">
+            <h2>Amazon</h2>
+            <img src="images/phone.webp" alt="amazon phone" onerror="this.onerror=null; this.src='images/default.png';">
+            <div class="product-phones">
+                <span>Price: ₹1,29,900</span><br>
+                <span>Storage:128GB</span><br>
+                <span>Color:Deep Purple</span><br>
+                <span>Rating: ⭐⭐⭐⭐☆ (4.5/5)</span>
+            </div>
+            <a href="https://www.amazon.com/" target="_blank" class="bu-now">Buy on Amazon</a>
+        </div>
+
+        <div class="Icard">
+            <h2>Flipkart</h2>
+            <img src="images/phone.webp" alt="flipkart phone" onerror="this.onerror=null; this.src='images/default.png';">
+            <div class="product-phones">
+                <span>Price: ₹1,29,500</span><br>
+                <span>Storage:128GB</span><br>
+                <span>Color:Space Black</span><br>
+                <span>Rating: ⭐⭐⭐⭐☆ (4.6/5)</span>
+            </div>
+            <a href="https://www.flipkart.com/" target="_blank" class="bu-now">Buy on Flipkart</a>
+        </div>
+
+
+    </div>
+     </div>
+</body>
+</html>
+
